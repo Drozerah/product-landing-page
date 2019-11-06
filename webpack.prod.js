@@ -6,6 +6,8 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Autoprefixer = require('autoprefixer')
+const Purgecss = require('@fullhuman/postcss-purgecss')
+const purgeCssWhitelist = require('./purgecss-whitelist')
 
 module.exports = merge(common, {
   mode: 'production', // Minify webpack JS bundle
@@ -64,6 +66,10 @@ module.exports = merge(common, {
                 new Autoprefixer({
                   grid: true, // Activate CSS Grid polyfill (IE 10-11)
                   overrideBrowserslist: ['> 1%', 'last 2 versions']
+                }),
+                new Purgecss({ // Purge CSS
+                  content: ['./src/**/*.html'],
+                  whitelist: [...purgeCssWhitelist] // whitelist
                 })
               ]
             }
