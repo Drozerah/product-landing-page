@@ -1,7 +1,7 @@
 /**
  * MODULES
  */
-import { logger } from './utils/logger.service.js'
+import * as appService from './utils/app.service.js'
 /**
  * Files (webpack importation)
  */
@@ -12,8 +12,12 @@ import '../../seo/humans.txt' // import humans.txt file
  * Run the application
  */
 const run = () => {
-  const msg = 'Hello from logger.service.js!'
-  logger(msg)
+  const msg = 'Hello from app.service.js!'
+  appService.logger(msg)
+  /**
+  * Materialize Components
+  */
+  appService.initSideNav('nav-mobile')
 
   /**
     * add conditionnaly FFC test script to page with search parameter

@@ -8,4 +8,7 @@ import './main.scss'
 import { run } from './app/run.service'
 
 console.log('app started!')
-run()
+
+document.addEventListener('DOMContentLoaded', () => {
+  run() // Run the application
+})

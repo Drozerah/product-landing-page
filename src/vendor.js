@@ -14,23 +14,23 @@
 // Components
 import 'materialize-css/js/cash'
 
-import 'materialize-css/js/component'
-// import './app/materialize-hacks/js/component' //~~ HACK
+// import 'materialize-css/js/component'
+import './app/materialize-hacks/js/component' // ~~ HACK
 
 import 'materialize-css/js/global'
-// import 'materialize-css/js/anime.min.js'
+import 'materialize-css/js/anime.min.js'
 
 // import 'materialize-css/js/modal'
-// import './app/materialize-hacks/js/modal' //~~ HACK
+// import './app/materialize-hacks/js/modal' // ~~ HACK
 
 import 'materialize-css/js/waves'
 // import 'materialize-css/js/forms'
 
 // import 'materialize-css/js/select'
-// import './app/materialize-hacks/js/select' //~~ HACK
+// import './app/materialize-hacks/js/select' // ~~ HACK
 
 // import 'materialize-css/js/dropdown'
-// import './app/materialize-hacks/js/dropdown' //~~ HACK
+// import './app/materialize-hacks/js/dropdown' // ~~ HACK
 
 // import 'materialize-css/js/autocomplete'
 // import 'materialize-css/js/buttons'
@@ -38,7 +38,7 @@ import 'materialize-css/js/waves'
 // import 'materialize-css/js/carousel'
 
 // import 'materialize-css/js/characterCounter'
-// import './app/materialize-hacks/js/characterCounter' //~~ HACK
+// import './app/materialize-hacks/js/characterCounter' // ~~ HACK
 
 // import 'materialize-css/js/chips'
 // import 'materialize-css/js/collapsible'
@@ -49,6 +49,7 @@ import 'materialize-css/js/waves'
 // import 'materialize-css/js/range'
 // import 'materialize-css/js/scrollspy'
 // import 'materialize-css/js/sidenav'
+import './app/materialize-hacks/js/sidenav' // ~~ HACK
 // import 'materialize-css/js/slider'
 // import 'materialize-css/js/tabs'
 // import 'materialize-css/js/tapTarget'
