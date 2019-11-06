@@ -53,7 +53,7 @@ module.exports = {
           {
             loader: 'file-loader', // Emits the file into the output directory
             options: {
-              name: '[name].[hash].[ext]',
+              name: '[name].[ext]',
               outputPath: 'img' // output path into the dist directory
             }
           }
