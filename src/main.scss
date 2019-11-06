@@ -4,3 +4,15 @@
 
 // import Materialize default styles
 @import 'scss/materialize';
+
+body{
+  nav{
+    a{
+      color: black;
+    }
+    img{
+      transform: translateY(8px);
+      margin-right: 5px;
+    }
+  }
+}
