@@ -10,6 +10,7 @@ import { run } from './app/run.service'
 * IMAGES
 */
 import './img/logo.png'
+import './img/undraw_create.svg'
 
 console.log('app started!')
 
