@@ -11,6 +11,9 @@ import { run } from './app/run.service'
 */
 import './img/logo.png'
 import './img/undraw_create.svg'
+import './img/undraw_design_process.svg'
+import './img/undraw_control_panel.svg'
+import './img/undraw_customer_survey.svg'
 
 console.log('app started!')
 
