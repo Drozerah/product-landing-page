@@ -131,12 +131,14 @@ import Component from './component' // ~~ HACK
       this._handleCloseReleaseBound = this._handleCloseRelease.bind(this);
       this._handleCloseTriggerClickBound = this._handleCloseTriggerClick.bind(this);
 
-      this.dragTarget.addEventListener('touchmove', this._handleDragTargetDragBound);
-      this.dragTarget.addEventListener('touchend', this._handleDragTargetReleaseBound);
-      this._overlay.addEventListener('touchmove', this._handleCloseDragBound);
-      this._overlay.addEventListener('touchend', this._handleCloseReleaseBound);
-      this.el.addEventListener('touchmove', this._handleCloseDragBound);
-      this.el.addEventListener('touchend', this._handleCloseReleaseBound);
+      // ~~ HACK => Add the passive flag to the event listeners
+      // @{doc} https://developers.google.com/web/tools/lighthouse/audits/passive-event-listeners?utm_source=lighthouse&utm_medium=devtools
+      this.dragTarget.addEventListener('touchmove', this._handleDragTargetDragBound, {passive: true}); // ~~ HACK
+      this.dragTarget.addEventListener('touchend', this._handleDragTargetReleaseBound, {passive: true}); // ~~ HACK
+      this._overlay.addEventListener('touchmove', this._handleCloseDragBound, {passive: true}); // ~~ HACK
+      this._overlay.addEventListener('touchend', this._handleCloseReleaseBound, {passive: true}); // ~~ HACK
+      this.el.addEventListener('touchmove', this._handleCloseDragBound, {passive: true});
+      this.el.addEventListener('touchend', this._handleCloseReleaseBound, {passive: true});
       this.el.addEventListener('click', this._handleCloseTriggerClickBound);
 
       // Add resize for side nav fixed
