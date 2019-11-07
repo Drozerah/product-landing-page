@@ -12,13 +12,18 @@ body{
     }
     img{
       transform: translateY(8px);
-      margin-right: 5px;
     }
   }
-  #index-banner{
-    .img-banner{
-      display: flex;
-      justify-content: center;
+  main{
+    .subtitle{
+      font-size: 1.64rem;
+      // margin: 0px; // remove margin on small device
+    }
+    #index-banner{
+      .img-banner{
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
