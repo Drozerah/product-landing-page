@@ -17,7 +17,8 @@ import 'materialize-css/js/cash'
 // import 'materialize-css/js/component'
 import './app/materialize-hacks/js/component' // ~~ HACK
 
-import 'materialize-css/js/global'
+// import 'materialize-css/js/global'
+import './app/materialize-hacks/js/global' // ~~ HACK fix ie 11 template literal issue
 import 'materialize-css/js/anime.min.js'
 
 // import 'materialize-css/js/modal'
