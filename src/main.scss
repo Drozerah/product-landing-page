@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @import 'scss/colors';
 @import 'scss/drozerah';
-
+// overwrite Materialize default variables
+@import 'scss/variables';
 // import Materialize default styles
 @import 'scss/materialize';
 
@@ -11,7 +12,11 @@
 }
 
 body{
+  // Fixed Navbar
+.navbar-fixed {
   nav{
+    top: -2px;
+    overflow: hidden;
     a{
       color: black;
     }
@@ -19,6 +24,7 @@ body{
       transform: translateY(8px);
     }
   }
+}
   main{
     .subtitle{
       font-size: 1.64rem;
