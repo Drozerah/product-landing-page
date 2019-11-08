@@ -26,6 +26,14 @@ const run = () => {
   /**
   * Materialize Components
   */
+  // Default active links behavour
+  appService.activeLinks(window.location.hash)
+  /* NAVIGATION */
+  // Get #nav-on-med-and-up
+  document.getElementById('nav-on-med-and-up').addEventListener('click', evt => {
+    // manage active links according to hash
+    if (evt.target.className.split(' ')[0] === 'nav-link') appService.activeLinks(evt.target.hash)
+  })
   /* MOBILE NAVIGATION */
   // Get #nav-mobile element
   const navMobile = document.getElementById('nav-mobile')
@@ -33,9 +41,12 @@ const run = () => {
   appService.initSideNav(navMobile)
   // Close Sidenav event listener
   navMobile.addEventListener('click', evt => {
-    // eslint-disable-next-line no-undef
-    if (evt.target.className.split(' ')[0] === 'nav-link') M.Sidenav.getInstance(navMobile).close()
-    return false
+    if (evt.target.className.split(' ')[0] === 'nav-link') {
+      // manage active links according to hash
+      appService.activeLinks(evt.target.hash)
+      // eslint-disable-next-line no-undef
+      return M.Sidenav.getInstance(navMobile).close()
+    }
   })
 }
 

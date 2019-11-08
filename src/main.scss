@@ -5,6 +5,11 @@
 // import Materialize default styles
 @import 'scss/materialize';
 
+// active link
+.active-nav-link{
+  background-color: rgba(240, 240, 240, 1);
+}
+
 body{
   nav{
     a{

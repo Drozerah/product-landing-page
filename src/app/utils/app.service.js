@@ -18,7 +18,7 @@ const logger = string => console.log(`${string}`)
  *
  * @doc https://materializecss.com/sidenav.html
  *
- * @param {element} element DOM element corresponding to the mobile nav bar
+ * @param {object} object DOM element corresponding to the mobile nav bar
  *
  * @returns new Sidenav instance
  *
@@ -28,8 +28,22 @@ const initSideNav = (elem) => {
   // eslint-disable-next-line no-undef
   return M.Sidenav.init(elem)
 }
+/**
+ * Add or remove a class name accordind to a given string as hash
+ *
+ * @param  {string} string that correspond to the given hash
+ *
+ * @author Drozerah https://github.com/Drozerah
+ */
+const activeLinks = (hash) => {
+  // working with all .nav-link
+  const links = [...document.querySelectorAll('.nav-link')]
+  const className = 'active-nav-link'
+  links.forEach(link => link.hash === hash ? link.classList.add(className) : link.classList.remove(className))
+}
 
 export {
   logger, // dev
-  initSideNav
+  initSideNav,
+  activeLinks
 }
