@@ -34,7 +34,7 @@ const run = () => {
   // Close Sidenav event listener
   navMobile.addEventListener('click', evt => {
     // eslint-disable-next-line no-undef
-    if (evt.target.className === 'nav-link') M.Sidenav.getInstance(navMobile).close()
+    if (evt.target.className.split(' ')[0] === 'nav-link') M.Sidenav.getInstance(navMobile).close()
     return false
   })
 }
