@@ -41,6 +41,8 @@ const run = () => {
   const navMobile = document.getElementById('nav-mobile')
   // Init Sidenav
   appService.initSideNav(navMobile)
+  // eslint-disable-next-line no-undef
+  // M.Sidenav.getInstance(navMobile).open() // ~~ DEBUG
   // Close Sidenav event listener
   navMobile.addEventListener('click', evt => {
     if (evt.target.className.split(' ')[0] === 'nav-link') {

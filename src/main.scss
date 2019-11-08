@@ -12,19 +12,33 @@
 }
 
 body{
-  // Fixed Navbar
-.navbar-fixed {
-  nav{
-    top: -2px;
-    overflow: hidden;
-    a{
-      color: black;
-    }
-    img{
-      transform: translateY(8px);
+    // Fixed Navbar
+  .navbar-fixed {
+    nav{
+      top: -2px;
+      overflow: hidden;
+      a{
+        color: black;
+      }
+      img{
+        transform: translateY(8px);
+      }
     }
   }
-}
+  #nav-mobile{
+    li > div {
+      font-size: 2.1rem;
+      height: $navbar-height;
+      line-height: $navbar-height;
+    }
+    li > a {
+      font-size: 1.2rem;
+      height: $navbar-height;
+      line-height: $navbar-height;
+      color:#333;
+      font-weight: inherit;
+    }
+  }
   main{
     .subtitle{
       font-size: 1.64rem;
