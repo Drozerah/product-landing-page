@@ -20,6 +20,7 @@ const run = () => {
   */
   if (window.location.search === '?ffc_test=1') {
     const scriptTag = document.createElement('script')
+    scriptTag.async = false
     scriptTag.src = 'https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'
     document.head.appendChild(scriptTag)
   }
