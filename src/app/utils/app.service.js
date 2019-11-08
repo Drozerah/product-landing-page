@@ -41,9 +41,22 @@ const activeLinks = (hash) => {
   const className = 'active-nav-link'
   links.forEach(link => link.hash === hash ? link.classList.add(className) : link.classList.remove(className))
 }
-
+/**
+ * Set .home-link links href attribute
+ *
+ * Get all links with the class off .home-link and set the href for each on with the given location
+ *
+ * @param {string} string the given window.location.origin
+ *
+ * @author Drozerah https://github.com/Drozerah
+ */
+const setHomeLinks = (origin) => {
+  const links = [...document.querySelectorAll('.home-link')]
+  links.forEach(link => { link.href = origin })
+}
 export {
   logger, // dev
   initSideNav,
-  activeLinks
+  activeLinks,
+  setHomeLinks
 }

@@ -27,12 +27,13 @@ const run = () => {
   /**
   * Materialize Components
   */
-  // Default active links behavour
+  // Set .home-link links href attribute
+  appService.setHomeLinks(window.location.origin)
+  // Set default active links behaviour
   appService.activeLinks(window.location.hash)
   /* NAVIGATION */
-  // Get #nav-on-med-and-up
+  // Get #nav-on-med-and-up and manage active links according to a given hash
   document.getElementById('nav-on-med-and-up').addEventListener('click', evt => {
-    // manage active links according to hash
     if (evt.target.className.split(' ')[0] === 'nav-link') appService.activeLinks(evt.target.hash)
   })
   /* MOBILE NAVIGATION */
@@ -43,7 +44,7 @@ const run = () => {
   // Close Sidenav event listener
   navMobile.addEventListener('click', evt => {
     if (evt.target.className.split(' ')[0] === 'nav-link') {
-      // manage active links according to hash
+      // Manage active links according to a given hash
       appService.activeLinks(evt.target.hash)
       // eslint-disable-next-line no-undef
       return M.Sidenav.getInstance(navMobile).close()
