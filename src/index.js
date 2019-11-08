@@ -18,5 +18,6 @@ import './img/undraw_customer_survey.svg'
 console.log('app started!')
 
 document.addEventListener('DOMContentLoaded', () => {
-  run() // Run the application
+  // Run the application
+  run()
 })

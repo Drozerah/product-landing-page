@@ -18,15 +18,15 @@ const logger = string => console.log(`${string}`)
  *
  * @doc https://materializecss.com/sidenav.html
  *
- * @param {string} string the DOM element ID corresponding to the mobile nav bar
+ * @param {element} element DOM element corresponding to the mobile nav bar
  *
  * @returns new Sidenav instance
  *
  * @author Drozerah https://github.com/Drozerah
  */
-const initSideNav = (elemId) => {
+const initSideNav = (elem) => {
   // eslint-disable-next-line no-undef
-  return M.Sidenav.init(document.getElementById(elemId))
+  return M.Sidenav.init(elem)
 }
 
 export {
