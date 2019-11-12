@@ -7,6 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "build:netlify": "webpack --config webpack.prod.js && cp ./netlify/_redirects ./dist/_redirects",
+    "build:netlify:toml": "webpack --config webpack.prod.js && cp ./netlify/netlify.toml ./dist/netlify.toml",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {
