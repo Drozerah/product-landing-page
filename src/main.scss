@@ -61,14 +61,12 @@ body{
       display: flex;
       flex-direction: column;
       h2{
-        margin-top: 40px;
+        margin: 40px 0px;
       }
       .item{
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        margin-bottom: 35px;
-        
+        justify-content: center;       
         .item__media{
           width: 30%;
           display: flex;
@@ -102,7 +100,9 @@ body{
       }
     }
     .media{
-      margin-top: 40px;
+      h2{
+        margin: 40px 0px;
+      }
       #video{
         width: 560px;
         height: 315px;
