@@ -9,12 +9,12 @@ module.exports = merge(common, {
   devServer: {
     open: true, // Tells dev-server to open the browser after server had been started
     overlay: true, // Shows a full-screen overlay with errors or warnings
-    hot: false // update changes without full refresh in the browser
-    // headers: {
-    //   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-    //   'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
-    //   'Access-Control-Allow-Origin': '*'
-    // }
+    hot: false, // update changes without full refresh in the browser
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    }
   },
   watchOptions: {
     ignored: /node_modules/,
