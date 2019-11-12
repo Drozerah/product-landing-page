@@ -10,6 +10,13 @@
 .active-nav-link{
   background-color: rgba(240, 240, 240, 1);
 }
+// anchor
+.anchor {
+  display: block;
+  height: $navbar-height;       /* same height as header */
+  margin-top: -$navbar-height;  /* same height as header */
+  visibility: hidden;
+}
 
 body{
     // Fixed Navbar
@@ -54,8 +61,7 @@ body{
       display: flex;
       flex-direction: column;
       h2{
-        margin-top: 0px;
-        margin-bottom: 45px;
+        margin-top: 40px;
       }
       .item{
         display: flex;
