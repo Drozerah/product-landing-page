@@ -25,12 +25,13 @@ if (isIE11) {
   /* add polyfills */
   // Symbol
   // Symbol.asyncIterator
+  // Symbol.iterator
   // Array.from
   // Array.prototype.forEach
   // MutationObserver
   const scriptTag = document.createElement('script')
   scriptTag.crossOrigin = 'anonymous'
-  scriptTag.src = 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.from%2CArray.prototype.forEach%2CSymbol%2CSymbol.iterator%2CMutationObserver'
+  scriptTag.src = 'https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.from%2CArray.prototype.forEach%2CSymbol%2CSymbol.iterator%2CSymbol.asyncIterator%2CMutationObserver'
   scriptTag.async = false
   document.head.appendChild(scriptTag)
   document.addEventListener('DOMContentLoaded', () => {
