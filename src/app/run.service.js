@@ -81,7 +81,9 @@ const run = () => {
       }
       if (mutation.type === 'attributes' && mutation.target.className === 'validate valid') {
         // console.log('valid!!')
-        inputSubmit.classList.remove('disabled')
+        if (inputSubmit.classList.contains('disabled')) {
+          inputSubmit.classList.remove('disabled')
+        }
       }
     }
   })
