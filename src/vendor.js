@@ -25,7 +25,7 @@ import 'materialize-css/js/anime.min.js'
 // import './app/materialize-hacks/js/modal' // ~~ HACK
 
 import 'materialize-css/js/waves'
-// import 'materialize-css/js/forms'
+import 'materialize-css/js/forms'
 
 // import 'materialize-css/js/select'
 // import './app/materialize-hacks/js/select' // ~~ HACK

@@ -17,5 +17,10 @@ module.exports = [
   'waves-circle',
   'waves-input-wrapper',
   'waves-button-input',
-  'waves-block'
+  'waves-block',
+  'validate',
+  'invalid',
+  'valid',
+  'helper-text',
+  'disabled'
 ]

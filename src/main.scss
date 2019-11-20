@@ -108,5 +108,18 @@ body{
         height: 315px;
       }
     }
+    .form-wrapper{
+      form{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        div:first-of-type{
+          flex:1;
+        }
+        div:last-of-type{
+          width: 100px;
+        }
+      }
+    }
   }
 }
