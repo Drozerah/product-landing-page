@@ -101,7 +101,7 @@ const run = (err) => {
   })
   // input event
   inputEmail.addEventListener('focusout', evt => {
-    console.log('focus out evt')
+    // console.log('focus out evt') ~~ DEBUG
     validateEmail(evt.target)
   })
 
