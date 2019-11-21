@@ -11,10 +11,12 @@ import '../../seo/humans.txt' // import humans.txt file
 /**
  * Run the application
  */
-// eslint-disable-next-line handle-callback-err
 const run = (err) => {
-  const msg = 'Hello from app.service.js!'
-  appService.logger(msg) // dev
+  if (err) {
+    console.warn(err.message)
+  }
+  // const msg = 'Hello from app.service.js!' ~~ DEV
+  // appService.logger(msg)  ~~ DEV
   /**
   * add conditionnaly FFC test script to page with search parameter
   * @{url} http://localhost:8080/?ffc_test=1
@@ -77,11 +79,11 @@ const run = (err) => {
   const observer = new MutationObserver(mutationsList => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'attributes' && mutation.target.className === 'validate invalid') {
-        // console.log('invalid!!')
+        // console.log('invalid!!')  ~~ DEBUG
         inputSubmit.classList.add('disabled')
       }
       if (mutation.type === 'attributes' && mutation.target.className === 'validate valid') {
-        // console.log('valid!!')
+        // console.log('valid!!')  ~~ DEBUG
         if (inputSubmit.classList.contains('disabled')) {
           inputSubmit.classList.remove('disabled')
         }
@@ -94,7 +96,7 @@ const run = (err) => {
 
   // input event
   inputEmail.addEventListener('input', evt => {
-    console.log('focus out evt')
+    // console.log('focus out evt') ~~ DEBUG
     validateEmail(evt.target)
   })
   // input event
@@ -106,10 +108,9 @@ const run = (err) => {
   // form event on submit
   document.getElementById('form').addEventListener('submit', evt => {
     evt.preventDefault()
-    console.log('submited!')
+    // console.log('submited!')  ~~ DEBUG
     const [email] = [...evt.target]
     if (validateEmail(email)) {
-      console.log('email =>', email)
       // observer.disconnect() // remove observer
       evt.target.reset() // reset form
     }
