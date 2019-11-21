@@ -11,7 +11,8 @@ import '../../seo/humans.txt' // import humans.txt file
 /**
  * Run the application
  */
-const run = () => {
+// eslint-disable-next-line handle-callback-err
+const run = (err) => {
   const msg = 'Hello from app.service.js!'
   appService.logger(msg) // dev
   /**
@@ -108,6 +109,7 @@ const run = () => {
     console.log('submited!')
     const [email] = [...evt.target]
     if (validateEmail(email)) {
+      console.log('email =>', email)
       // observer.disconnect() // remove observer
       evt.target.reset() // reset form
     }
