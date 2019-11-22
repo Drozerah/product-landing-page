@@ -104,7 +104,7 @@ const run = (err) => {
     validateEmail(evt.target)
   })
   // input event
-  inputEmail.addEventListener('focusout', evt => {
+  inputEmail.addEventListener('blur', evt => {
     // console.log('focus out evt') // ~~ DEBUG
     if (evt.target.value.length > 0) {
       validateEmail(evt.target)
