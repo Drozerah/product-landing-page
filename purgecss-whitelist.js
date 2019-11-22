@@ -22,5 +22,7 @@ module.exports = [
   'invalid',
   'valid',
   'helper-text',
-  'disabled'
+  'disabled',
+  'toast-container',
+  'toast'
 ]

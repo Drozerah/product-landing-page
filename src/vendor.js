@@ -55,5 +55,6 @@ import './app/materialize-hacks/js/sidenav' // ~~ HACK
 // import 'materialize-css/js/tabs'
 // import 'materialize-css/js/tapTarget'
 // import 'materialize-css/js/timepicker'
+import './app/materialize-hacks/js/toasts' // ~~ HACK
 // import 'materialize-css/js/toasts'
 // import 'materialize-css/js/tooltip'

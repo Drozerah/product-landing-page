@@ -15,8 +15,8 @@ const run = (err) => {
   if (err) {
     console.warn(err.message)
   }
-  // const msg = 'Hello from app.service.js!' ~~ DEV
-  // appService.logger(msg)  ~~ DEV
+  // const msg = 'Hello from app.service.js!' // ~~ DEV
+  // appService.logger(msg)  // ~~ DEV
   /**
   * add conditionnaly FFC test script to page with search parameter
   * @{url} http://localhost:8080/?ffc_test=1
@@ -79,14 +79,18 @@ const run = (err) => {
   const observer = new MutationObserver(mutationsList => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'attributes' && mutation.target.className === 'validate invalid') {
-        // console.log('invalid!!')  ~~ DEBUG
+        // console.log('invalid!!')  // ~~ DEBUG
         inputSubmit.classList.add('disabled')
       }
       if (mutation.type === 'attributes' && mutation.target.className === 'validate valid') {
-        // console.log('valid!!')  ~~ DEBUG
+        // console.log('valid!!')  // ~~ DEBUG
         if (inputSubmit.classList.contains('disabled')) {
           inputSubmit.classList.remove('disabled')
         }
+      }
+      if (mutation.type === 'attributes' && mutation.target.className === 'validate' && inputSubmit.classList.contains('disabled')) {
+        // console.log('focus out case') // ~~ DEBUG
+        inputSubmit.classList.remove('disabled')
       }
     }
   })
@@ -96,23 +100,33 @@ const run = (err) => {
 
   // input event
   inputEmail.addEventListener('input', evt => {
-    // console.log('focus out evt') ~~ DEBUG
+    // console.log('focus out evt') // ~~ DEBUG
     validateEmail(evt.target)
   })
   // input event
   inputEmail.addEventListener('focusout', evt => {
-    // console.log('focus out evt') ~~ DEBUG
-    validateEmail(evt.target)
+    // console.log('focus out evt') // ~~ DEBUG
+    if (evt.target.value.length > 0) {
+      validateEmail(evt.target)
+    } else {
+      // restore default className if input is empty
+      inputEmail.className = 'validate'
+    }
   })
 
   // form event on submit
   document.getElementById('form').addEventListener('submit', evt => {
     evt.preventDefault()
-    // console.log('submited!')  ~~ DEBUG
+    // console.log('submited!') // ~~ DEBUG
     const [email] = [...evt.target]
     if (validateEmail(email)) {
-      // observer.disconnect() // remove observer
+      // observer.disconnect() // remove observer // ~~ DEV
       evt.target.reset() // reset form
+      /**
+      * Toast
+      */
+      // eslint-disable-next-line no-undef
+      M.toast({ html: 'Thank you!' })
     }
   })
 }
