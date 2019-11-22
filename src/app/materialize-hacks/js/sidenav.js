@@ -137,8 +137,8 @@ import Component from './component' // ~~ HACK
       this.dragTarget.addEventListener('touchend', this._handleDragTargetReleaseBound, {passive: true}); // ~~ HACK
       this._overlay.addEventListener('touchmove', this._handleCloseDragBound, {passive: true}); // ~~ HACK
       this._overlay.addEventListener('touchend', this._handleCloseReleaseBound, {passive: true}); // ~~ HACK
-      this.el.addEventListener('touchmove', this._handleCloseDragBound, {passive: true});
-      this.el.addEventListener('touchend', this._handleCloseReleaseBound, {passive: true});
+      this.el.addEventListener('touchmove', this._handleCloseDragBound, {passive: true}); // ~~ HACK
+      this.el.addEventListener('touchend', this._handleCloseReleaseBound, {passive: true}); // ~~ HACK
       this.el.addEventListener('click', this._handleCloseTriggerClickBound);
 
       // Add resize for side nav fixed
