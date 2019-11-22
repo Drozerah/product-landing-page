@@ -45,6 +45,11 @@ body{
       color:#333;
       font-weight: inherit;
     }
+    li > a.nav-link-btn-wrapper{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
   main{
     .subtitle{

@@ -48,9 +48,14 @@ const run = (err) => {
   // M.Sidenav.getInstance(navMobile).open() // ~~ DEBUG
   // Close Sidenav event listener
   navMobile.addEventListener('click', evt => {
-    if (evt.target.className.split(' ')[0] === 'nav-link') {
-      // Manage active links according to a given hash
-      appService.activeLinks(evt.target.hash)
+    if (evt.target.className.includes('nav-link') || evt.target.className.includes('btn')) {
+      if (evt.target.className.includes('btn')) {
+        // Manage parent active links according to a given hash
+        appService.activeLinks(evt.target.parentElement.hash)
+      } else {
+        // Manage active links according to a given hash
+        appService.activeLinks(evt.target.hash)
+      }
       // eslint-disable-next-line no-undef
       return M.Sidenav.getInstance(navMobile).close()
     }
