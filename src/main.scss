@@ -19,7 +19,17 @@
 }
 
 body{
-    // Fixed Navbar
+  // ~~ DEV
+  // @media #{$small-and-down} {
+  //   color:blue;
+  // }
+  // @media #{$medium-only} {
+  //   color:red;
+  // }
+  // @media #{$large-and-up} {
+  //   color:green;
+  // }
+  // Fixed Navbar
   .navbar-fixed {
     nav{
       top: -2px;
@@ -71,9 +81,11 @@ body{
       .item{
         display: flex;
         flex-direction: row;
-        justify-content: center;       
-        .item__media{
+        justify-content: center;
+        .item__media, .item__text{
           width: 30%;
+        }   
+        .item__media{
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -96,33 +108,79 @@ body{
           }
         }
         .item__text{
-          width: 30%;
-          // background-color: orange;
           h3{
             font-size: 1.64rem;
           }
         }
+        // mobile
+        @media #{$small-and-down} {
+          flex-direction: column;
+          .item__media, .item__text{
+            width: 100%;
+            h3{
+              text-align: center;
+            }
+          }
+        }
       }
+    }
+    #Media + .row {
+      margin-bottom: 0px;
     }
     .media{
       h2{
         margin: 40px 0px;
       }
-      #video{
-        width: 560px;
-        height: 315px;
+      // responsive video
+      .video-wrapper{
+        position: relative;
+        padding-bottom: 56.25%;
+        #video{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
     .form-wrapper{
+      h2{
+        margin: 40px 0px;
+      }
+      p{
+        margin-top:0px;
+      }
       form{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 40px;
         div:first-of-type{
           flex:1;
+          input{
+            width: calc(100% - 60px);
+            padding-left: 10px;
+          }
         }
         div:last-of-type{
-          width: 100px;
+          width: 120px;
+          display: flex;
+          justify-content: center;
+        }
+        // mobile
+        @media #{$small-and-down} {
+          flex-direction: column;
+          div:first-of-type{
+            flex:1;
+            input{
+              width: calc(100% - 3em);
+              padding-left: 10px;
+            }
+          }
+          div:last-of-type{
+            width: auto;
+            display: flex;
+            justify-content: flex-end;
+          }
         }
       }
     }
